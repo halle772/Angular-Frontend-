@@ -1,0 +1,21 @@
+<div class="employee-container">
+  <h2>Employee Details</h2>
+  <form [formGroup]="employeeForm">
+    <div formGroupName="name">
+      <label>Name:</label>
+      <input formControlName="name" type="text">
+    </div>
+    <div formGroupName="salary">
+      <label>Salary:</label>
+      <input formControlName="salary" type="number">
+    </div>
+    <div formGroupName="deductions">
+      <label>Deductions:</label>
+      <input formControlName="deductions" type="number">
+    </div>
+    <button (click)="calculatePay()">Calculate Pay</button>
+  </form>
+  <div *ngIf="calculatedPay !== undefined" class="pay-result">
+    <h3>Calculated Pay: {{ calculatedPay }}</h3>
+  </div>
+</div>

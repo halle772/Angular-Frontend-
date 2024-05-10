@@ -1,0 +1,35 @@
+<div class="signup-container">
+    <h2>Sign Up</h2>
+    <form [formGroup]="signupForm">
+      <div>
+        <label for="username">Username:</label>
+        <input id="username" formControlName="username" type="text">
+        <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="error-message">
+          Username is required.
+        </div>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" type="email">
+        <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error-message">
+          Valid email is required.
+        </div>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input id="password" formControlName="password" type="password">
+        <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error-message">
+          Password is required.
+        </div>
+      </div>
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password">
+        <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched" class="error-message">
+          Confirm Password is required.
+        </div>
+      </div>
+      <button type="button" (click)="signup()">Sign Up</button>
+    </form>
+  </div>
+  
