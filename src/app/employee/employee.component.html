@@ -1,0 +1,17 @@
+<h2>{{ isEditMode ? 'Edit Employee' : 'Add Employee' }}</h2>
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div>
+    <label for="salary">Salary:</label>
+    <input type="number" id="salary" formControlName="salary">
+  </div>
+  <div>
+    <label for="deductions">Deductions:</label>
+    <input type="number" id="deductions" formControlName="deductions">
+  </div>
+  <button type="submit">{{ isEditMode ? 'Update' : 'Add' }}</button>
+</form>
